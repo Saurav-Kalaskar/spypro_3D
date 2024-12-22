@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 3d-location-tracker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: 3d-location-tracker
+  template:
+    metadata:
+      labels:
+        app: 3d-location-tracker
+    spec:
+      containers:
+      - name: 3d-location-tracker
+        image: your-docker-registry/3d-location-tracker:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: database-url
+        - name: NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: mapbox-secrets
+              key: access-token
+        - name: NEXTAUTH_URL
+          value: "https://your-domain.com"
+        - name: NEXTAUTH_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: nextauth-secrets
+              key: secret
+

@@ -1,0 +1,44 @@
+{
+  "name": "3d-location-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon backend/index.ts",
+    "build": "next build frontend",
+    "start": "NODE_ENV=production node backend/index.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "20.1.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "mapbox-gl": "^2.14.1",
+    "next": "13.4.1",
+    "next-auth": "^4.22.1",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "tailwindcss": "3.3.2",
+    "three": "^0.152.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/mapbox-gl": "^2.7.11",
+    "@types/three": "^0.152.0",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.14.0",
+    "ts-node": "^10.9.1"
+  }
+}
+
